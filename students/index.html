@@ -1,0 +1,44 @@
+<head>
+	<title>Student</title>
+</head>
+
+<body>
+	<h1>Students</h1>
+
+	{{> eleves }}
+</body>
+
+<template name="eleves">
+	<table>
+		<tr>
+			<td>Nom</td>
+			<td>Prénom</td>
+			<td>Age</td>
+			<td>Ville</td>
+			<td>Update</td>
+			<td>Delete</td>
+		</tr>
+
+		{{#each all_eleves}}
+		<tr>
+			<td>{{ name }}</td>
+			<td>{{ firstname }}</td>
+			<td>{{ age }}</td>
+			<td>{{ citie }}</td>
+			<td><button id="submit_update">Update</button></td>
+			<td><button id="submit_delete">Delete</button></td>
+		</tr>
+		{{/each}}
+	</table>
+
+
+	<hr/>
+	<div id="form">
+		<div>Ajoutez un nouvel élève :</div>
+		<input id="name" type="text" placeholder="Nom"/>
+		<input id="firstname" type="text" placeholder="Prénom"/>
+		<input id="age" type="text" placeholder="Age"/>
+		<input id="citie" type="text" placeholder="Ville"/>
+		<button id="submit_eleve">Nouvel élève</button>
+	</div>
+</template>
